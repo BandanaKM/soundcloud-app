@@ -26,3 +26,26 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+
+Summary of Migrations:
+
+summary of foreign keys: 
+
+playlist:
+user_id
+(because it belongs to a user)
+
+song:
+genre_id
+user_id
+(because it belongs to a genre and a user)
+
+
+summary of join table
+
+join table name: songs_playlists
+it has a: 
+songs_id
+playlists_id

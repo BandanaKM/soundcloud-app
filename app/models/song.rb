@@ -1,6 +1,7 @@
 class Song < ActiveRecord::Base
 
   belongs_to :genre
-  belongs_to :playlist
+  has_and_belongs_to_many :playlists
+  belongs_to :user
 
 end

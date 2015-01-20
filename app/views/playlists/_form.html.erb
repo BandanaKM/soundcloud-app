@@ -1,0 +1,12 @@
+<%= form_for(@playlist) do |f| %>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="songs">
+     <%= collection_check_boxes(:playlist, :song_ids, Song.all, :id, :title) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

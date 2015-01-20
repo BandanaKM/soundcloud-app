@@ -1,13 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'welcome/home'
+
+  root to: 'welcome#home'
+
   get 'sessions/new'
 
   resources :songs
 
   resources :genres
 
+  resources :playlists
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+
+  resources :users 
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
