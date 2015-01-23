@@ -25,6 +25,7 @@ class PlaylistsController < ApplicationController
     params[:playlist][:song_ids].pop
     song_ids = params[:playlist][:song_ids]
     songs = Song.where(id: song_ids)
+    # revisit this code and see if there is a more succinct wasy to do it. 
     @playlist.songs = songs
     if @playlist.save
       redirect_to(:action => 'index')
