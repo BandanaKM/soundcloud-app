@@ -34,6 +34,8 @@ class PlaylistsController < ApplicationController
     end
   end
 
+  #explain to yourself what is going on here -- 
+
 
   def edit
     @playlist = Playlist.find(params[:id])

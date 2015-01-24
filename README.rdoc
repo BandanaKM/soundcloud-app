@@ -21,8 +21,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
-
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
@@ -49,3 +47,9 @@ join table name: songs_playlists
 it has a: 
 songs_id
 playlists_id
+
+
+
+On port 5000 -- 
+
+http://localhost:5000/
