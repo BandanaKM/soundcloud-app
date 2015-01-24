@@ -33,6 +33,20 @@
 <%= link_to 'New Song', new_song_path %>
 
 <%- @tracks.each do |track| %>
-  <iframe width="100%" height="150" scrolling="no" frameborder="no" src=" https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/<%= track.id %>">
-  </iframe>
+  <div class='row'>
+    <div class='col-sm-8'>
+      <iframe width="100%" height="150" scrolling="no" frameborder="no" src=" https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/<%= track.id %>">
+      </iframe>
+    </div>
+    <div class='col-sm-4'>
+      Add track #<%= track.id %> to your collection
+      <%= form_tag songs_path do %>
+        <%= hidden_field_tag 'song[title]', track.title %>
+        <%= hidden_field_tag 'song[artist]', track.user.username %>
+        <%= hidden_field_tag 'song[image]', track.artwork_url %>
+        <%= hidden_field_tag 'song[mp3file]', track.id %>
+        <%= submit_tag 'Add This Song', class: 'btn btn-success' %>
+      <% end %>
+    </div>
+  </div>
 <% end %>
