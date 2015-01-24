@@ -10,9 +10,8 @@
 # Users
   User.create(name: "Pablo", email: "pablo@pablo.com", password: "olbap", password_confirmation: "olbap")
   User.create(name: "Dina", email: "dina@dina.com", password: "anid", password_confirmation: "anid")
-  User.create(name: "Aba", email: "aba@aba.com", password: "aba", password_confirmation: "aba") 
+  User.create(name: "Aba", email: "aba@aba.com", password: "aba", password_confirmation: "aba")
   User.create(name: "Naveen", email: "naveen@naveen.com", password: "neevan", password_confirmation: "neevan")
-
 
 #Genres
 
@@ -41,7 +40,7 @@
  	progressive_house = Genre.create(name: 'Progressive House')
  	punk = Genre.create(name: 'Punk')
  	r_and_b = Genre.create(name: 'R&B')
- 	rap = Genre.create(name: 'Rap')	
+ 	rap = Genre.create(name: 'Rap')
  	reggae = Genre.create(name: 'Reggae')
  	rock = Genre.create(name: 'Rock')
  	singer_songwriter = Genre.create(name: 'Singer-Songwriter')
@@ -92,8 +91,7 @@
    Song.create(title: "song36", artist: "artist4", image: "image_url4", mp3file: "mp3_url4", genre_id: trap.id)
    Song.create(title: "song37", artist: "artist4", image: "image_url4", mp3file: "mp3_url4", genre_id: trip_hop.id)
    Song.create(title: "song38", artist: "artist4", image: "image_url4", mp3file: "mp3_url4", genre_id: world.id)
-  
-  
+
 # Playlists
 
    Playlist.create(title: "Favorites")
