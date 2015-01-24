@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
   def home
   	@songs = Song.all
 
-    client = SoundCloud.new(client_id: "3d2ec585a5565ddf5124e3ce9f39e2f6")
+    client = SoundCloud.new(client_id: "b44e85efb74863fcde285559186549ec")
     @tracks = client.get('/tracks', limit: 3, order: 'hotness')
   end
 
