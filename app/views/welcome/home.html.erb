@@ -1,6 +1,12 @@
+<br>
+<br>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Songs</h1>
+  <%= form_tag(home_welcome_index_path, :method => :get, :class=> 'genre_filter_styles',  :id => 'genre_filter') do %>
+    <%= select_tag :genre, options_for_select(@genres.map {|genre| genre.name}) %>
+  <% end %>
 
 <table>
   <thead>
@@ -9,7 +15,7 @@
       <th>Artist</th>
       <th>Image</th>
       <th>Track Id</th>
-      <th colspan="3"></th>
+      <th colspan="4">Actions</th>
     </tr>
   </thead>
 
@@ -26,6 +32,8 @@
         <td><%= link_to 'Show', song %></td>
         <td><%= link_to 'Edit', edit_song_path(song) %></td>
         <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> <%= link_to 'Add Song', repost_welcome_path(song), method: :get, class: 'btn btn-success' %>    
+        <td> 
       </tr>
     <% end %>
   </tbody>
@@ -33,7 +41,7 @@
 
 <br>
 
-<h3> iframe iteration </h1> 
+<!-- <h3> iframe iteration </h1> 
 
  <tbody>
     <% @songs.each do |song| %>
@@ -54,10 +62,14 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
 
 <br>
+
+
+
+<h3> alternative iframe iteration with ability to repost</h1> 
 
 
 <%= link_to 'New Song', new_song_path %>
@@ -80,4 +92,3 @@
     </div>
   </div>
 <% end %>
-

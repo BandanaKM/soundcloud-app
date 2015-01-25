@@ -2,6 +2,9 @@ class PlaylistsController < ApplicationController
 
   # before_action :require_user
 
+    # before_action :require_user
+
+
   def index
     @playlists = Playlist.all
   end

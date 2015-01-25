@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
 
-  get 'welcome/home'
+  resources :welcome do
+    member do
+      get :repost
+    end 
+    collection do
+      get :home
+    end 
+  end 
+
+  # bana review 
 
   root to: 'welcome#home'
 
