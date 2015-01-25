@@ -10,14 +10,22 @@ class WelcomeController < ApplicationController
        @songs = Song.all
       end
   	   @genres = Genre.all
-    client = SoundCloud.new(client_id: "b44e85efb74863fcde285559186549ec")
-    @tracks = client.get('/tracks', limit: 3, order: 'hotness')
+     @tracks = $sc_client.get('/tracks', limit: 3, order: 'hotness')
   end
 
+    # need to refactor this code 
+
+
+  def search
+    query = params[:query]
+    @songs = $sc_client.get('/tracks', q: query, limit: 3)
+  end
 
   def repost
-    song = params[:song_id]
-    current_user.songs << songs
+    song = Song.find_or_create_by(track_id: params[:song_id])
+    current_user.songs << song
+    redirect_to root_url, notice: 'Song was reposted to your profile.'
   end
+
 
 end 

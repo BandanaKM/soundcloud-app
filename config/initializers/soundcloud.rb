@@ -1,0 +1,1 @@
+$sc_client = SoundCloud.new(client_id: "b44e85efb74863fcde285559186549ec")

@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
 
   resources :welcome do
-    member do
-      get :repost
-    end 
     collection do
       get :home
     end 
@@ -13,6 +10,8 @@ Rails.application.routes.draw do
 
   root to: 'welcome#home'
 
+  get 'repost/:song_id' => 'welcome#repost'
+  get 'search' => 'welcome#search'
   get 'sessions/new'
 
   resources :songs

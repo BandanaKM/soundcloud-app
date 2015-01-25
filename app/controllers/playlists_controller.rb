@@ -20,8 +20,6 @@ class PlaylistsController < ApplicationController
     @songs = Song.all
   end
 
-  #new is called before rendering the form 
-  # double check why you need Songs here. 
 
   def create
     @playlist = Playlist.new(playlist_params)
@@ -35,6 +33,8 @@ class PlaylistsController < ApplicationController
       render('new')
     end
   end
+
+  # need to refactor this code. also need to make sure a user can add songs to their playlist. 
 
 
   def edit
