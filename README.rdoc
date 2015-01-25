@@ -49,3 +49,15 @@ join table name: songs_playlists
 it has a: 
 songs_id
 playlists_id
+
+
+-- 
+
+when working with the hash:
+
+1. make sure you run bundle:
+
+2. in your terminal:
+
+@tracks = client.get('/tracks', limit: 10, order: 'hotness')
+

@@ -8,10 +8,13 @@
       <th>Title</th>
       <th>Artist</th>
       <th>Image</th>
-      <th>Mp3file</th>
+      <th>Track Id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
+
+
+<h3> normal iteration <h1> 
 
   <tbody>
     <% @songs.each do |song| %>
@@ -19,7 +22,7 @@
         <td><%= song.title %></td>
         <td><%= song.artist %></td>
         <td><%= song.image %></td>
-        <td><%= song.mp3file %></td>
+        <td><%= song.track_id %></td>
         <td><%= link_to 'Show', song %></td>
         <td><%= link_to 'Edit', edit_song_path(song) %></td>
         <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,6 +32,33 @@
 </table>
 
 <br>
+
+<h3> iframe iteration </h1> 
+
+ <tbody>
+    <% @songs.each do |song| %>
+      <div class='row'>
+        <div class='col-sm-8'>
+          <td><% song.title %></td>
+          <td><% song.artist %></td>
+          <td><% song.image %></td>
+          <td><% song.track_id %></td>
+          <br>
+            <iframe width="100%" height="150" scrolling="no" frameborder="no" src=" https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/<%= song.track_id %>">
+            </iframe>
+         </div>
+        </div>
+        <td><%= link_to 'Show', song %></td>
+        <td><%= link_to 'Edit', edit_song_path(song) %></td>
+        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
 
 <%= link_to 'New Song', new_song_path %>
 
@@ -50,3 +80,4 @@
     </div>
   </div>
 <% end %>
+

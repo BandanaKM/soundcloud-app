@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20150119181310) do
     t.string   "title"
     t.string   "artist"
     t.string   "image"
-    t.string   "mp3file"
+    t.string   "track_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "genre_id"
