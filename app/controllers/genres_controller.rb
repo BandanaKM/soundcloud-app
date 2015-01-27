@@ -1,8 +1,9 @@
 class GenresController < ApplicationController
 
+  # before_action :require_admin, only: [:new, :create, :edit, :update, destroy]
+
   # before_action :require_user
 
-  # before_action :require_admin, only: [:new, :create, :edit, :update, destroy]
 
   def index
     @genres = Genre.all

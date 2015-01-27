@@ -8,9 +8,11 @@ class SongsController < ApplicationController
     @songs = Song.all
   end
 
+
   def show
     @song = Song.find(params[:id])
   end
+
 
   def new
     @song = Song.new
@@ -53,6 +55,6 @@ class SongsController < ApplicationController
   
     # Never trust parameters from the scary internet, only allow the white list through.
     def song_params
-      params.require(:song).permit(:title, :artist, :image, :mp3file)
+      params.require(:song).permit(:title, :artist, :image, :track_id)
     end
 end

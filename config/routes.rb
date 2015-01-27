@@ -1,9 +1,28 @@
 Rails.application.routes.draw do
 
-  get 'welcome/home'
+
+  resources :welcome do
+    member do
+      get :repost
+    end 
+    collection do
+      get :home
+    end 
+  end 
+
+
+  # resources :welcome do
+  #   collection do
+  #     get :home
+  #   end 
+  # end 
+
+  # bana review 
 
   root to: 'welcome#home'
 
+  get 'repost/:song_id' => 'welcome#repost'
+  get 'search' => 'welcome#search'
   get 'sessions/new'
 
   resources :songs

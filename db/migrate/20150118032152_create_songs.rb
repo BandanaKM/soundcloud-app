@@ -4,7 +4,7 @@ class CreateSongs < ActiveRecord::Migration
       t.string :title
       t.string :artist
       t.string :image
-      t.string :mp3file
+      t.string :track_id
 
       t.timestamps null: false
     end

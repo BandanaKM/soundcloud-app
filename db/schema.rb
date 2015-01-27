@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119181310) do
+ActiveRecord::Schema.define(version: 20150127024259) do
 
   create_table "genres", force: true do |t|
     t.string   "name"
@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 20150119181310) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "users_id"
+    t.integer  "user_id"
   end
 
-  add_index "playlists", ["users_id"], name: "index_playlists_on_users_id"
+  add_index "playlists", ["user_id"], name: "index_playlists_on_user_id"
 
   create_table "playlists_songs", force: true do |t|
     t.integer  "playlist_id"
@@ -39,17 +39,15 @@ ActiveRecord::Schema.define(version: 20150119181310) do
     t.string   "title"
     t.string   "artist"
     t.string   "image"
-    t.string   "mp3file"
+    t.string   "track_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "genre_id"
-    t.integer  "genres_id"
-    t.integer  "users_id"
+    t.integer  "user_id"
   end
 
   add_index "songs", ["genre_id"], name: "index_songs_on_genre_id"
-  add_index "songs", ["genres_id"], name: "index_songs_on_genres_id"
-  add_index "songs", ["users_id"], name: "index_songs_on_users_id"
+  add_index "songs", ["user_id"], name: "index_songs_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
