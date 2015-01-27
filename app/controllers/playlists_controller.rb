@@ -1,8 +1,7 @@
 class PlaylistsController < ApplicationController
 
   # before_action :require_user
-
-    # before_action :require_user
+  # before_action :require_user
 
 
   def index
@@ -35,6 +34,8 @@ class PlaylistsController < ApplicationController
   end
 
   # need to refactor this code. also need to make sure a user can add songs to their playlist. 
+
+  # playlist needs to be associate with a current user 
 
 
   def edit

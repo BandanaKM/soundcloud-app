@@ -12,6 +12,11 @@
   User.create(name: "Dina", email: "dina@dina.com", password: "anid", password_confirmation: "anid")
   User.create(name: "Aba", email: "aba@aba.com", password: "aba", password_confirmation: "aba")
   User.create(name: "Naveen", email: "naveen@naveen.com", password: "neevan", password_confirmation: "neevan")
+  User.create(name: "User5", email: "user5@email.com", password: "apple", password_confirmation: "apple")
+  User.create(name: "User6", email: "user6@email.com", password: "apple", password_confirmation: "apple")
+  User.create(name: "User7", email: "user7@email.com", password: "apple", password_confirmation: "apple")
+  User.create(name: "User8", email: "user8@email.com", password: "apple", password_confirmation: "apple")
+  User.create(name: "User9", email: "user9@email.com", password: "user9", password_confirmation: "user9")
 
 #Genres
 

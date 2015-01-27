@@ -56,30 +56,39 @@ playlists_id
 when working with the hash:
 
 1. make sure you run bundle:
-
 2. in your terminal:
-
 @tracks = client.get('/tracks', limit: 10, order: 'hotness')
 
 
 
 Need to:
 
-# make sure that users_id, playlist_if is singular. then try method. 
 
 # make sure that a user can repost songs
-   - from normal app -- this would be better **
-   - from api 
+   - from normal app -- this would be better ** 
+   - seed the database with most songs of a different genre
+
 
 # make sure user can can add to playlist
-   - from normal app -- this would be better **
-   - from api 
+   - from normal app -- this would be better
 
 # system of followers 
-   - from normal api 
-
-
-# limit the number of songs that are appearing on the welcome page
 
 
 
+Reposts:
+
+# in welcome controller
+
+  def repost
+    song = params[:song_id]
+    current_user.songs << songs
+  end
+
+
+# in home.html.erb
+
+  <td> <%= link_to 'Add Song', repost_welcome_path(song), method: :get, class: 'btn btn-success' %>   
+
+
+# 

@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
 
+
   resources :welcome do
+    member do
+      get :repost
+    end 
     collection do
       get :home
     end 
   end 
+
+
+  # resources :welcome do
+  #   collection do
+  #     get :home
+  #   end 
+  # end 
 
   # bana review 
 

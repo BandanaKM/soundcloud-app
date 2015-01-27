@@ -22,7 +22,7 @@
 
 <h3> normal iteration <h1> 
 
-  <tbody>
+  <tbody> 
     <% @songs.each do |song| %>
       <tr>
         <td><%= song.title %></td>
@@ -32,8 +32,8 @@
         <td><%= link_to 'Show', song %></td>
         <td><%= link_to 'Edit', edit_song_path(song) %></td>
         <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td> <%= link_to 'Add Song', repost_welcome_path(song), method: :get, class: 'btn btn-success' %>    
-        <td> 
+        <td> <%= link_to 'Add Song', repost_welcome_path(song), remote: true, method: :get, class: 'btn btn-success' %>
+        </td> 
       </tr>
     <% end %>
   </tbody>
@@ -43,7 +43,7 @@
 
 <h3> iframe iteration </h1> 
 
- <tbody>
+<!--  <tbody>
     <% @songs.each do |song| %>
       <div class='row'>
         <div class='col-sm-8'>
@@ -63,32 +63,10 @@
     <% end %>
   </tbody>
 </table>
-
+ -->
 
 <br>
 
 
 
 <h3> alternative iframe iteration with ability to repost</h1> 
-
-
-<%= link_to 'New Song', new_song_path %>
-
-<% @tracks.each do |track| %>
-  <div class='row'>
-    <div class='col-sm-8'>
-      <iframe width="100%" height="150" scrolling="no" frameborder="no" src=" https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/<%= track.id %>">
-      </iframe>
-    </div>
-    <div class='col-sm-4'>
-      Add track #<%= track.id %> to your collection
-      <%= form_tag songs_path do %>
-        <%= hidden_field_tag 'song[title]', track.title %>
-        <%= hidden_field_tag 'song[artist]', track.user.username %>
-        <%= hidden_field_tag 'song[image]', track.artwork_url %>
-        <%= hidden_field_tag 'song[mp3file]', track.id %>
-        <%= submit_tag 'Add This Song', class: 'btn btn-success' %>
-      <% end %>
-    </div>
-  </div>
-<% end %>
